@@ -76,7 +76,7 @@ public class PlanetView extends View {
         matchPaint.setTextSize((float) matchTextSize);
         setLayerType(LAYER_TYPE_SOFTWARE, null);
         int startX = SizeUtils.sp2px(context, 50.0f);
-        starWidth = SizeUtils.sp2px(context, 20.0f);
+        starWidth = SizeUtils.sp2px(context, 40.0f);
         starMarginTop = 0;
         signPaint.setShader(new LinearGradient((float) startX, 0.0f, 0.0f, 0.0f,
                 new int[]{0x33333333, 0xFFFFFFFF, 0xFFFFFFFF, 0x33333333},
@@ -180,7 +180,7 @@ public class PlanetView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         float radius = starRadius;
-        float min = Math.min(scale * 0.5f, 1.0f);
+        float min = Math.min(scale * 0.6f, 1.0f);
         // 透明度
         int alpha = (int) (0xff * min);
         // 半径

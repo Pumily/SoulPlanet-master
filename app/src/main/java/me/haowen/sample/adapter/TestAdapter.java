@@ -15,7 +15,7 @@ public class TestAdapter extends PlanetAdapter {
 
     @Override
     public int getCount() {
-        return 50;
+        return 30;
     }
 
     @Override

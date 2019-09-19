@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.Random;
 
 import me.haowen.soulplanet.adapter.PlanetAdapter;
@@ -26,27 +27,27 @@ public class TestAdapter extends PlanetAdapter {
         int starColor = position % 2 == 0 ? PlanetView.COLOR_FEMALE : PlanetView.COLOR_MALE;
         boolean hasShadow = false;
 
-        String str = "";
-        if (position % 12 == 0) {
-            str = "最活跃";
-            starColor = PlanetView.COLOR_MOST_ACTIVE;
-        } else if (position % 20 == 0) {
-            str = "最匹配";
-            starColor = PlanetView.COLOR_BEST_MATCH;
-        } else if (position % 33 == 0) {
-            str = "最新人";
-            starColor = PlanetView.COLOR_MOST_NEW;
-        } else if (position % 18 == 0) {
-            hasShadow = true;
-            str = "最闪耀";
-        } else {
-            str = "描述";
-        }
+//        String str = "";
+//        if (position % 12 == 0) {
+//            str = "最活跃";
+//            starColor = PlanetView.COLOR_MOST_ACTIVE;
+//        } else if (position % 20 == 0) {
+//            str = "最匹配";
+//            starColor = PlanetView.COLOR_BEST_MATCH;
+//        } else if (position % 33 == 0) {
+//            str = "最新人";
+//            starColor = PlanetView.COLOR_MOST_NEW;
+//        } else if (position % 18 == 0) {
+//            hasShadow = true;
+//            str = "最闪耀";
+//        } else {
+//            str = "描述";
+//        }
         hasShadow=true;
         planetView.setStarColor(starColor);
         planetView.setHasShadow(hasShadow);
         //planetView.setMatch(position * 2 + "%", str);
-        planetView.setMatch(str);
+        //planetView.setMatch(str);
         if (hasShadow) {
             planetView.setMatchColor(starColor);
         } else {
@@ -67,13 +68,14 @@ public class TestAdapter extends PlanetAdapter {
      * @return 随机昵称
      */
     private String getRandomNick() {
-        Random random = new Random();
-        int len = random.nextInt(12) + 1;
-        StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < len; i++) {
-            builder.append(getRandomSingleCharacter());
-        }
-        return builder.toString();
+//        Random random = new Random();
+//        int len = random.nextInt(12) + 1;
+//        StringBuilder builder = new StringBuilder();
+//        for (int i = 0; i < len; i++) {
+//            builder.append(getRandomSingleCharacter());
+//        }
+        String str = getRandomString();
+        return str;
     }
 
     /**
@@ -97,6 +99,32 @@ public class TestAdapter extends PlanetAdapter {
             e.printStackTrace();
         }
         return str;
+    }
+
+    /**
+     * 获取随机字符串
+     * @return 返回获取到的随机字符串
+     */
+    protected String getRandomString(){
+        String str = "";
+        int randomNum=0;
+        String randomChar;
+        Random random = new Random();
+        //字符串
+        ArrayList<String> list = new ArrayList<>();
+        list.add("I love you");
+        list.add("je t'aime");
+        list.add("사랑해 ");
+        list.add("ich liebe dich");
+        list.add("Ti Amo");
+        list.add("爱している");
+        list.add("ik hou van jou");
+        list.add("te amo vos amo");
+        list.add("milujite");
+        list.add("chit pade");
+        randomNum = random.nextInt(list.size());
+        randomChar = list.get(randomNum);
+        return randomChar;
     }
 
     @Override

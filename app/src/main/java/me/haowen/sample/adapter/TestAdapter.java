@@ -42,9 +42,11 @@ public class TestAdapter extends PlanetAdapter {
         } else {
             str = "描述";
         }
+        hasShadow=true;
         planetView.setStarColor(starColor);
         planetView.setHasShadow(hasShadow);
-        planetView.setMatch(position * 2 + "%", str);
+        //planetView.setMatch(position * 2 + "%", str);
+        planetView.setMatch(str);
         if (hasShadow) {
             planetView.setMatchColor(starColor);
         } else {

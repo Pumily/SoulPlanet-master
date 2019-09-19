@@ -135,11 +135,13 @@ public class PlanetView extends View {
     /**
      * 设置匹配显示
      *
-     * @param matchPercent  匹配百分比文字
      * @param matchDescribe 匹配描述（最匹配、最活跃）
      */
-    public void setMatch(String matchPercent, String matchDescribe) {
-        this.matchPercent = matchPercent;
+//    public void setMatch(String matchPercent, String matchDescribe) {
+//        this.matchPercent = matchPercent;
+//        this.matchDescribe = matchDescribe;
+//    }
+    public void setMatch(String matchDescribe) {
         this.matchDescribe = matchDescribe;
     }
 
@@ -168,7 +170,7 @@ public class PlanetView extends View {
         starCenterX = (float) (w / 2);
         starCenterY = (signY + ((float) starMarginTop)) + ((float) (starWidth / 2));
         Rect matchRect = new Rect();
-        matchPaint.getTextBounds(matchPercent, 0, matchPercent.length(), matchRect);
+        //matchPaint.getTextBounds(matchPercent, 0, matchPercent.length(), matchRect);
         matchPercentX = (float) ((w - matchRect.width()) / 2);
         matchPercentY = (((signY + ((float) starMarginTop)) + ((float) starWidth)) + ((float) starMarginTop)) + ((float) matchRect.height());
         matchPaint.getTextBounds(matchDescribe, 0, matchDescribe.length(), matchRect);
@@ -204,7 +206,7 @@ public class PlanetView extends View {
         }
         canvas.drawCircle(starCenterX, starCenterY, radius, starPaint);
         matchPaint.setColor(alpha << 24 | matchColor);
-        canvas.drawText(matchPercent, matchPercentX, matchPercentY, matchPaint);
+        //canvas.drawText(matchPercent, matchPercentX, matchPercentY, matchPaint);
         canvas.drawText(matchDescribe, matchDescribeX, matchDescribeY, matchPaint);
         if (hasShadow || isOverstep) {
             if (isOverstep) {

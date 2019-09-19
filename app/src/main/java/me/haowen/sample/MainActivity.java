@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         p.windowAnimations=R.style.dialogStyle;
         p.gravity = Gravity.CENTER;//设置位置
 
-        p.alpha = 0.8f;//设置透明度
+        p.alpha = 0.9f;//设置透明度
         dialogWindow.setAttributes(p);
     }
 }

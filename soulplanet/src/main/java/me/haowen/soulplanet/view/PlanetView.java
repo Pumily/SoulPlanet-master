@@ -173,7 +173,7 @@ public class PlanetView extends View {
         //matchPaint.getTextBounds(matchPercent, 0, matchPercent.length(), matchRect);
         matchPercentX = (float) ((w - matchRect.width()) / 2);
         matchPercentY = (((signY + ((float) starMarginTop)) + ((float) starWidth)) + ((float) starMarginTop)) + ((float) matchRect.height());
-        matchPaint.getTextBounds(matchDescribe, 0, matchDescribe.length(), matchRect);
+       // matchPaint.getTextBounds(matchDescribe, 0, matchDescribe.length(), matchRect);
         matchDescribeX = (float) ((w - matchRect.width()) / 2);
         matchDescribeY = (matchPercentY + ((float) this.starMarginTop)) + ((float) matchRect.height());
     }
@@ -207,7 +207,7 @@ public class PlanetView extends View {
         canvas.drawCircle(starCenterX, starCenterY, radius, starPaint);
         matchPaint.setColor(alpha << 24 | matchColor);
         //canvas.drawText(matchPercent, matchPercentX, matchPercentY, matchPaint);
-        canvas.drawText(matchDescribe, matchDescribeX, matchDescribeY, matchPaint);
+        //canvas.drawText(matchDescribe, matchDescribeX, matchDescribeY, matchPaint);
         if (hasShadow || isOverstep) {
             if (isOverstep) {
                 signDistanceX = signDistanceX + 0.5f;

@@ -3,11 +3,14 @@ package me.haowen.sample;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.VideoView;
 
@@ -16,7 +19,9 @@ public class HomeActivity extends AppCompatActivity {
     private AlphaAnimation mHideAnimation	= null;
     private AlphaAnimation mShowAnimation	= null;
     private TextView mTv1;
+    private TextView mTv2;
     private View mBgVideo;
+    private RelativeLayout mText;
     int flag = 0;//定义标记变量
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,20 +48,29 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         mTv1 = findViewById(R.id.bg_tv1);
+        mTv2 = findViewById(R.id.bg_tv2);
+        mText = findViewById(R.id.bg_text);
+        Typeface custom_font = Typeface.createFromAsset(getAssets(),  "fonts/浮生未歇By：伊筠&阿影.ttf");
+        Typeface customEN_font = Typeface.createFromAsset(getAssets(),  "fonts/American Scribe.ttf");
+        mTv1.setTypeface(custom_font);
+        mTv2.setTypeface(customEN_font);
         mBgVideo = findViewById(R.id.bg_video);
         mTv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (flag==0){
-                    setShowAnimation(mTv1,2000);
-                    mTv1.setText("两只眼睛四条腿");
+                    setShowAnimation(mText,2000);
+                    mTv1.setText("你喜欢的歌我也有去听");
+                    mTv2.setText("I also listen to your favorite songs");
                 }
                 else if (flag==1){
-                    setShowAnimation(mTv1,2000);
-                    mTv1.setText("扑通扑通跳下水");
+                    setShowAnimation(mText,2000);
+                    mTv1.setText("你看的电影我也偷偷去看过");
+                    mTv2.setText("Watch the movies you've seen");
                 }else if (flag==2){
-                    setShowAnimation(mTv1,2000);
-                    mTv1.setText("蛤蟆不喝水太平年");
+                    setShowAnimation(mText,2000);
+                    mTv1.setText("其实，我喜欢你");
+                    mTv2.setText("Actually, I like you");
                 }else if (flag==3){
                     setHideAnimation(mBgVideo,2000);
                     Intent intent = new Intent(HomeActivity.this,MainActivity.class);

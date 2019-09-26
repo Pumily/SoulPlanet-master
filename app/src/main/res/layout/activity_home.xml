@@ -8,15 +8,31 @@
         android:id="@+id/bg_video"
         layout="@layout/video_background" />
 
-
-    <TextView
-        android:id="@+id/bg_tv1"
+    <RelativeLayout
+        android:id="@+id/bg_text"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="15dp"
-        android:text="一只蛤蟆一张嘴"
-        android:gravity="center"
-        android:textSize="26sp"
-        android:textColor="#ffffff"/>
-
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/bg_tv1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:text="其实啊我存过你的照片"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:letterSpacing="0.1"
+            android:fontFamily="serif-monospace"
+            android:textColor="#C9C9C9"/>
+        <TextView
+            android:id="@+id/bg_tv2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:text="Actually, I saved your photo"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:fontFamily="serif-monospace"
+            android:layout_marginTop="60dp"
+            android:textColor="#C9C9C9"/>
+    </RelativeLayout>
 </RelativeLayout>

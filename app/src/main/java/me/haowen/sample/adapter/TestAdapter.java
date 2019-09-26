@@ -16,7 +16,7 @@ public class TestAdapter extends PlanetAdapter {
 
     @Override
     public int getCount() {
-        return 30;
+        return 40;
     }
 
     @Override
@@ -112,6 +112,7 @@ public class TestAdapter extends PlanetAdapter {
         Random random = new Random();
         //字符串
         ArrayList<String> list = new ArrayList<>();
+        list.add("我爱你");
         list.add("I love you");
         list.add("je t'aime");
         list.add("사랑해 ");

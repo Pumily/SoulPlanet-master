@@ -10,6 +10,6 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_alignParentTop="true"
-        android:background="#77444444"
+        android:background="#77111111"
         />
 </RelativeLayout>

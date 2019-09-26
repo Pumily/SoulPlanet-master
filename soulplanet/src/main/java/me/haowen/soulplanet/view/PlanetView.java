@@ -16,8 +16,8 @@ import me.haowen.soulplanet.utils.SizeUtils;
  */
 public class PlanetView extends View {
 
-    public static final int COLOR_MALE = 0xC1F1F2;
-    public static final int COLOR_FEMALE = 0xFBD8D8;
+    public static final int COLOR_MALE = 0x9F7C91;
+    public static final int COLOR_FEMALE = 0xE5DFE3;
     public static final int COLOR_MOST_ACTIVE = 0xFFFFFF;
     public static final int COLOR_MOST_NEW = 0x9485D8;
     public static final int COLOR_BEST_MATCH = 0x58B4AC;
@@ -75,8 +75,8 @@ public class PlanetView extends View {
         matchTextSize = SizeUtils.sp2px(context, 6.0f);
         matchPaint.setTextSize((float) matchTextSize);
         setLayerType(LAYER_TYPE_SOFTWARE, null);
-        int startX = SizeUtils.sp2px(context, 50.0f);
-        starWidth = SizeUtils.sp2px(context, 40.0f);
+        int startX = SizeUtils.sp2px(context, 45.0f);
+        starWidth = SizeUtils.sp2px(context, 35.0f);
         starMarginTop = 0;
         signPaint.setShader(new LinearGradient((float) startX, 0.0f, 0.0f, 0.0f,
                 new int[]{0x33333333, 0xFFFFFFFF, 0xFFFFFFFF, 0x33333333},

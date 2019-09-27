@@ -7,14 +7,51 @@ import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.VideoView;
 
 public class HomeActivity extends AppCompatActivity {
+
+    private Button pause;
+    private MediaPlayer player;
+    private SeekBar mSeekBar;
+    private boolean hadDestroy = false;
+    private Handler mHandler = new Handler() {
+        public void handleMessage(android.os.Message msg) {
+
+            switch (msg.what) {
+                case 0x01:
+
+                    break;
+
+                default:
+                    break;
+            }
+        };
+    };
+    Runnable runnable = new Runnable() {
+
+        @Override
+        public void run() {
+
+            if (!hadDestroy) {
+                mHandler.postDelayed(this, 1000);
+                int currentTime = Math
+                        .round(player.getCurrentPosition() / 1000);
+                String currentStr = String.format("%s%02d:%02d", "当前时间 ",
+                        currentTime / 60, currentTime % 60);
+
+                mSeekBar.setProgress(player.getCurrentPosition());
+            }
+        }
+    };
 
     private AlphaAnimation mHideAnimation	= null;
     private AlphaAnimation mShowAnimation	= null;
@@ -27,6 +64,15 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        pause = (Button) findViewById(R.id.pause);
+
+        mSeekBar = (SeekBar) findViewById(R.id.seekbar);
+
+
+
+        player = new MediaPlayer();
+        initMediaplayer();
 
         final VideoView videoview =findViewById(R.id.videoView);
         final String videoPath = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.p1).toString();
@@ -111,6 +157,41 @@ public class HomeActivity extends AppCompatActivity {
         mShowAnimation.setDuration( duration );
         mShowAnimation.setFillAfter( true );
         view.startAnimation( mShowAnimation );
+    }
+
+    private void initMediaplayer() {
+        try {
+           /* File file = new File(Environment.getExternalStorageDirectory()
+                    + "/Download/", "aiqiu.mp3");
+            player.setDataSource(file.getPath());*/
+            //Log.e("播放器", file.toString());
+            player = MediaPlayer.create(this,R.raw.yhn);
+            // player.prepare();
+            if (!player.isPlaying()) {
+                player.start();
+                int totalTime = Math.round(player.getDuration() / 1000);
+                String str = String.format("%02d:%02d", totalTime / 60,
+                        totalTime % 60);
+
+                mSeekBar.setMax(player.getDuration());
+                mHandler.postDelayed(runnable, 1000);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+    @Override
+    protected void onDestroy() {
+        // TODO 自动生成的方法存根
+        super.onDestroy();
+        if (player != null) {
+            player.stop();
+            hadDestroy = true;
+            player.release();
+        }
     }
 
 }

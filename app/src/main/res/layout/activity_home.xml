@@ -12,6 +12,15 @@
         android:id="@+id/bg_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:max="0"
+            android:progress="0"
+            android:secondaryProgress="0" />
+
         <TextView
             android:id="@+id/bg_tv1"
             android:layout_width="match_parent"
@@ -23,16 +32,39 @@
             android:letterSpacing="0.1"
             android:fontFamily="serif-monospace"
             android:textColor="#C9C9C9"/>
+
         <TextView
             android:id="@+id/bg_tv2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_alignStart="@+id/bg_tv1"
+            android:layout_alignLeft="@+id/bg_tv1"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="60dp"
+            android:fontFamily="serif-monospace"
+            android:gravity="center"
             android:padding="15dp"
             android:text="Actually, I saved your photo"
-            android:gravity="center"
-            android:textSize="22sp"
-            android:fontFamily="serif-monospace"
-            android:layout_marginTop="60dp"
-            android:textColor="#C9C9C9"/>
+            android:textColor="#C9C9C9"
+            android:textSize="22sp" />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ImageButton
+            android:id="@+id/pause"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:background="#0000"
+            android:scaleType="fitCenter"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/mc" />
     </RelativeLayout>
 </RelativeLayout>

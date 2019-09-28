@@ -11,15 +11,16 @@ import android.os.Handler;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.VideoView;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private Button pause;
+    private ImageButton pause;
     private MediaPlayer player;
     private SeekBar mSeekBar;
     private boolean hadDestroy = false;
@@ -65,11 +66,11 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        pause = (Button) findViewById(R.id.pause);
+        pause = (ImageButton) findViewById(R.id.pause);
 
         mSeekBar = (SeekBar) findViewById(R.id.seekbar);
 
-
+        pause.setOnClickListener(this);
 
         player = new MediaPlayer();
         initMediaplayer();
@@ -125,6 +126,31 @@ public class HomeActivity extends AppCompatActivity {
                 flag=(flag+1)%4;
             }
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+
+            case R.id.pause:
+                if (!player.isPlaying()) {
+                    player.start();
+                    int totalTime = Math.round(player.getDuration() / 1000);
+                    String str = String.format("%02d:%02d", totalTime / 60,
+                            totalTime % 60);
+                    mSeekBar.setMax(player.getDuration());
+                    mHandler.postDelayed(runnable, 1000);
+                }
+                else if (player.isPlaying()) {
+                    player.pause();
+                }
+
+                break;
+
+
+            default:
+                break;
+        }
     }
 
     /**

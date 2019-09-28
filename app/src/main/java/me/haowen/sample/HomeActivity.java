@@ -10,9 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.LinearLayout;
+import android.widget.CheckBox;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -20,7 +18,7 @@ import android.widget.VideoView;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private ImageButton pause;
+    private CheckBox pause;
     private MediaPlayer player;
     private SeekBar mSeekBar;
     private boolean hadDestroy = false;
@@ -66,7 +64,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        pause = (ImageButton) findViewById(R.id.pause);
+        pause = (CheckBox) findViewById(R.id.pause);
 
         mSeekBar = (SeekBar) findViewById(R.id.seekbar);
 

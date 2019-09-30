@@ -8,6 +8,7 @@
     tools:context="me.haowen.sample.MainActivity">
 
 
+
     <me.haowen.soulplanet.view.SoulPlanetsView
         android:id="@+id/soulPlanetView"
         android:layout_width="wrap_content"
@@ -23,5 +24,23 @@
         app:lightColor="#00ff00"
         app:radiusPercent="0.75"
         app:scrollSpeed="20" />
+
+   <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--&gt;-->
+
+        <!--<CheckBox-->
+            <!--android:id="@+id/pause"-->
+            <!--android:button="@null"-->
+            <!--android:layout_width="30dp"-->
+            <!--android:layout_height="30dp"-->
+            <!--android:layout_marginBottom="10dp"-->
+            <!--android:background="@drawable/music_bg"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_alignParentRight="true" />-->
+    <!--</RelativeLayout>-->
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

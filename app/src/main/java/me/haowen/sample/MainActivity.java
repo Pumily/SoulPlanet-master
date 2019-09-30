@@ -47,9 +47,10 @@ public class MainActivity extends AppCompatActivity {
     private void DiyDialog1(int position){
         View view = LayoutInflater.from(this).inflate(R.layout.alert, null);
         AlertDialog.Builder alterDiaglog = new AlertDialog.Builder(MainActivity.this).setView(view);
-        //alterDiaglog.setIcon(R.drawable.ic_launcher_foreground);//图标
+        alterDiaglog.setIcon(R.mipmap.tq1);//图标
         final TextView tv_text=view.findViewById(R.id.tv_text);//获取内容
         final ImageView iv_image=view.findViewById(R.id.iv_image);//获取图片
+
             //position 范围0-29
         switch (position){
             case 0:
@@ -182,10 +183,64 @@ public class MainActivity extends AppCompatActivity {
                 tv_text.setText("  等红灯的时候拍到了一对亲昵耳语的情侣，不知道为什么，看着这照片就不自觉的开始笑，然后就想到了你. ");
                 iv_image.setImageResource(R.mipmap.ml);
                 break;
+            case 26:
+                alterDiaglog.setTitle("2018-3-27");//标题文字
+                tv_text.setText("  在学校球场上打球的时候看见了你，你穿着一条之前没穿过的红裙子，跟着你朋友一起说着话走了过去，不知道为什么，突然就不想打球了。 ");
+                iv_image.setImageResource(R.mipmap.qz);
+                break;
+            case 27:
+                alterDiaglog.setTitle("2018-4-7");//标题文字
+                tv_text.setText("  下课回家的时候被人拽住了衣角，回头一看，是你作业没写好向我求助，原来女生力气那么大啊，不过你紧张的样子挺可爱的 ");
+                iv_image.setImageResource(R.mipmap.yj);
+                break;
+            case 28:
+                alterDiaglog.setTitle("2018-5-11");//标题文字
+                tv_text.setText("  在去教室上课的路上，我一个人走着，你从身后拍了一下我的肩膀，我回过头的时候，你已经跳到了我的面前，冲着我甜甜的笑了一下。我承认我呆了那么几秒 ");
+                iv_image.setImageResource(R.mipmap.wx);
+                break;
+            case 29:
+                alterDiaglog.setTitle("2018-1-21");//标题文字
+                tv_text.setText("   在图书馆遇见了你，本想和你打个招呼，想想算了。结果是看了一下午的书什么也没看进去 ");
+                iv_image.setImageResource(R.mipmap.ds);
+                break;
+            case 30:
+                alterDiaglog.setTitle("2018-1-26");//标题文字
+                tv_text.setText("  你收拾书包特别慢，以前我总是放学第一个冲出教室，后来学会了磨磨蹭蹭跟在你身后看着你的背影。 ");
+                iv_image.setImageResource(R.mipmap.by);
+                break;
+            case 31:
+                alterDiaglog.setTitle("2018-5-4");//标题文字
+                tv_text.setText("  每次我很丧的时候去找你，虽然都是一些吐槽的负能量，但是你都不会烦我，真好。 ");
+                iv_image.setImageResource(R.mipmap.qt);
+                break;
+            case 32:
+                alterDiaglog.setTitle("2018-4-9");//标题文字
+                tv_text.setText("  拉你打游戏，你每次都会把捡到的好东西给我，问你为啥不要你只是说你太菜了死的太快...你傻啊，我可以保护你啊。 ");
+                iv_image.setImageResource(R.mipmap.cj);
+            case 33:
+                alterDiaglog.setTitle("2018-5-11");//标题文字
+                tv_text.setText("  学校搞活动，去的晚了找不着班级在哪儿，然后就看到了你隔着两层楼向我招手。 ");
+                iv_image.setImageResource(R.mipmap.hs);
+                break;
+            case 34:
+                alterDiaglog.setTitle("2018-2-7");//标题文字
+                tv_text.setText("  你问我，“今天是不是你生日？” ");
+                iv_image.setImageResource(R.mipmap.sr);
+                break;
+            case 35:
+                alterDiaglog.setTitle("2018-2-6");//标题文字
+                tv_text.setText("  趴在教室窗台上发呆，你路过，然后递给了我一颗糖问我吃不吃。 ");
+                iv_image.setImageResource(R.mipmap.tg);
+                break;
+            case 36:
+                alterDiaglog.setTitle("2018-5-27");//标题文字
+                alterDiaglog.setIcon(R.mipmap.tq1);
+                tv_text.setText("  在食堂的时候，看到你开了门之后回头看了看后面的人，耐心的等他们进门后才轻轻的把门带上。 ");
+                iv_image.setImageResource(R.mipmap.tm);
+                break;
 
                 default:
-                    alterDiaglog.setTitle("默认标题");//标题文字
-                    tv_text.setText("默认内容");
+                    alterDiaglog.setTitle("未来的某一天" );//标题文字
                     tv_text.setText("  我喜欢你，我想留给你什么更聪明的话，但是我只知道这一句 ");
                     iv_image.setImageResource(R.mipmap.bx);
                     break;
